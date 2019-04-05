@@ -1,16 +1,16 @@
 import re
-from Node import Node
+from Point import Point
 
-nodeList = []
+pointList = []
 
-def buildNode(line):
+def buildPoints(line):
     line = line.split()
-    node = Node(int(line[0]), int(line[1]), int(line[2]))
-    nodeList.append(node)
+    point = Point(int(line[0]), int(line[1]), int(line[2]))
+    pointList.append(point)
 
 def readFile():
     with open("instancias/TSP/berlin52.tsp.txt", 'r') as f:
         for line in f:
-            buildNode(line)
+            buildPoints(line)
 
 readFile()
