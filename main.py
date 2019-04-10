@@ -45,6 +45,7 @@ def matingPool(population, selectionResults):
         matingpool.append(population[index])
     return matingpool
 
+
 def breed(parent1, parent2):
     child = []
     childP1 = []
@@ -96,7 +97,6 @@ def mutatePopulation(population, mutationRate):
         mutatedInd = mutate(population[ind], mutationRate)
         mutatedPop.append(mutatedInd)
     return mutatedPop
-
 
 def nextGeneration(currentGen, eliteSize, mutationRate):
     popRanked = rankRoutes(currentGen)
