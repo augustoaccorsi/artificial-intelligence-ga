@@ -127,14 +127,16 @@ def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generatio
         pop = nextGeneration(pop, eliteSize, mutationRate)
         progress.append(1 / rankRoutes(pop)[0][1])
 
-    plt.plot(progress)
-    plt.ylabel('Distance')
-    plt.xlabel('Generation')
+        plt.plot(progress)
+        plt.ylabel('Distance')
+        plt.xlabel('Generation')
     plt.show()
 
 cityList = []
 
-for i in range(0,25):
-    cityList.append(City(x=int(random.random() * 200), y=int(random.random() * 200)))
+with open("instancias/berlin52.tsp.txt", 'r') as f:
+        for line in f:
+            line = line.split()
+            cityList.append(City(x=int(line[1]), y=int(line[2])))
 
 geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=500)
