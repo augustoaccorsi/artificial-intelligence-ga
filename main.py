@@ -122,12 +122,16 @@ def geneticAlgorithmPlot(population, popSize, eliteSize, mutationRate, generatio
     pop = initialPopulation(popSize, population)
     progress = []
     progress.append(1 / rankRoutes(pop)[0][1])
+   
+    x = []
+    y = []
 
-    for i in range(0, generations):
+    for city in population: 
         pop = nextGeneration(pop, eliteSize, mutationRate)
         progress.append(1 / rankRoutes(pop)[0][1])
-
-        plt.plot(progress)
+        x.append(city.getX())
+        y.append(city.getY())
+        plt.plot(x, y, 'ro')
         plt.ylabel('Distance')
         plt.xlabel('Generation')
     plt.show()

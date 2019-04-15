@@ -13,3 +13,9 @@ class City:
 
     def __repr__(self):
         return "(" + str(self.x) + "," + str(self.y) + ")"
+    
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
